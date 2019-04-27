@@ -7,17 +7,17 @@
     <script type="text/javascript">
       // When requesting a URL that should be redirected specify the target name
       //  at the end of the URL using a "sendto" query parameter: ?sendto=<targetname>
-      // For example: https://wildcatbluffdgc.github.io/redirects.html?sendto=hole2
-      //  will redirect to the target URL indicated for hole2 in redirects.js.
+      // For example: https://wildcatbluffdgc.github.io/redirect.html?sendto=hole2
+      //  will redirect to the target URL indicated for "hole2" in redirects.js
       
       const urlParams = new URLSearchParams(window.location.search);
       const target = urlParams.get('sendto');
       
-      var targeturl = redirects['main'];
+      var targeturl = redirects['main']; // default target URL to fallback to is the value for "main" 
       if (target !== "" && target) {
-        targeturl = redirects[target];
+        targeturl = redirects[target]; // if sendto query parameter was read in the request, update target URL
       }
-      window.top.location.href=targeturl;
+      window.top.location.href=targeturl;  // perform the redirect to target URL
     </script>
   </body>
 </html>
