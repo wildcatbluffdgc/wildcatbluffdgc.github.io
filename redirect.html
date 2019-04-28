@@ -1,23 +1,22 @@
-<html>
-  <head>
-    <!-- Include redirects.js for target list -->
-    <script src="redirects.js" type="text/javascript"></script>
-  </head>
-  <body>
-    <script type="text/javascript">
-      // When requesting a URL that should be redirected specify the target name
-      //  at the end of the URL using a "sendto" query parameter: ?sendto=<targetname>
-      // For example: https://wildcatbluffdgc.github.io/redirect.html?sendto=hole2
-      //  will redirect to the target URL indicated for "hole2" in redirects.js
-      
-      const urlParams = new URLSearchParams(window.location.search);
-      const target = urlParams.get('sendto');
-      
-      var targeturl = redirects['main']; // default target URL to fallback to is the value for "main" 
-      if (target !== "" && target) {
-        targeturl = redirects[target]; // if sendto query parameter was read in the request, update target URL
-      }
-      window.top.location.href=targeturl;  // perform the redirect to target URL
-    </script>
-  </body>
-</html>
+<!DOCTYPE html>
+<!-- Include redirects.js for target list -->
+<script src="redirects.js" type="text/javascript"></script>
+<script type="text/javascript">
+  // For use to send the static URLs from the QR codes on tee signs to the intended pages.
+  // Using redirects allows for changing the target pages in the future.
+  // Usage:
+  // Specify the target name at the end of the redirect.html URL using a query parameter:
+  //  ?sendto=[targetname]
+  // For example: https://wildcatbluffdgc.github.io/redirect.html?sendto=hole13
+  //  will redirect to the target URL that is set for hole13 in redirects.js
+
+  // read "sendto" query parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const target = urlParams.get('sendto');
+
+  var targeturl = redirects['main']; // use value set for "main" as default target URL 
+  if (redirects[target]) {  // confirm sendto query parameter was read and matches a target URL
+    targeturl = redirects[target]; // update the target URL
+  }
+  window.top.location.href=targeturl;  // perform the redirect to target URL
+</script>
