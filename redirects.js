@@ -1,4 +1,6 @@
-// define redirect targets by editing values between quotes:
+// This file controls the target URLs matched from the "sendto" query parameter.
+// Add or update the available target URLs by saving edits to these values:
+
 const redirects = {
   main: "https://www.facebook.com/Wildcat-Bluff-Disc-Golf-Course-392191570823455/posts",
   hole1long: "",
