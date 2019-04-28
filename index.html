@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>WildcatBluffDGC Redirects</title>
+<!-- Include redirects.js for target list -->
+<script src="redirects.js" type="text/javascript"></script>
+
+<h1>Wildcat Bluff Disc Golf Course - Sign Redirects</h1>
+<p>Redirect the static links used with QR codes on tee signs to allow future edits to target pages</p>
+<p><b>Usage:<b>
+When requesting a URL that should be redirected specify the target name
+at the end of the URL using a "sendto" query parameter: ?sendto=<targetname>
+<br> 
+For example: https://wildcatbluffdgc.github.io/redirect.html?sendto=hole2
+will redirect to the target URL indicated for "hole2" in redirects.js</p>
+<br>
+<b>Currently defined redirect targets (for testing purposes):<b>
+<table>
+    <tbody id="tbody"></tbody>
+</table>
+<script>
+var tbody = document.getElementById('tbody');
+for (var i = 0; i < redirects.length; i++) {
+  var tr = "<tr>";
+  tr += "<td>" + obj[i].key + "</td>" + "<td>" + obj[i].value.toString() + "</td></tr>";
+  tbody.innerHTML += tr;
+}
+</script>
