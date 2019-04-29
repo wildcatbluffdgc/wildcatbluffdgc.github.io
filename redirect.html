@@ -2,13 +2,14 @@
 <!-- Include redirects.js for target list -->
 <script src="redirects.js" type="text/javascript"></script>
 <script type="text/javascript">
-  // For use to send the static URLs from the QR codes on tee signs to the intended pages.
-  // Using redirects allows for changing the target pages in the future.
-  // Usage:
-  // Specify the target name at the end of the redirect.html URL using a query parameter:
-  //  ?sendto=[targetname]
-  // For example: https://wildcatbluffdgc.github.io/redirect.html?sendto=hole13
-  //  will redirect to the target URL that is set for hole13 in redirects.js
+// This page is for use to forward the static URLs in the QR codes on tee signs to the target pages.
+// Using redirects allows for updating these target pages in the future without having to change the QR codes.
+// Usage:
+// Send a request for redirect.html and indicate the target name at the end of the URL using query parameter:
+//  ?sendto=[target name]
+// For example: https://wildcatbluffdgc.github.io/redirect.html?sendto=hole13
+//  will redirect a browser to the target URL that is set for hole13 in redirects.js
+
 
   // read "sendto" query parameter
   const urlParams = new URLSearchParams(window.location.search);
