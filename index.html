@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <meta name="robots" content="noindex">
-<title>WildcatBluffDGC Redirects</title>
-<!-- Include redirects.js for target list -->
+<title>Wildcat Bluff DGC Redirects</title>
+<!-- Include redirects.js to read target URL list -->
 <script src="redirects.js" type="text/javascript"></script>
 
-<h1>Wildcat Bluff Disc Golf Course - Sign Redirects</h1>
-<p>For use to redirect the static URLs in QR codes on tee signs to allow for changing target pages in the future</p>
-<p>To use ../<b>redirect.html</b> :</p>
-<p>Specify the target name at the end of the URL using a "sendto" query parameter: <b>?sendto=<i>targetname</i></b></p>
-<br>
-For example: <b>https://wildcatbluffdgc.github.io/redirect.html?sendto=hole2</b>
-will redirect to the target URL indicated for <i>hole2</i> in redirects.js
-<br>
-<b>List of currently defined redirect targets (for testing purposes):<b>
-<table>
-    <tbody id="tbody"></tbody>
-</table>
-<script>
-var tbody = document.getElementById('tbody');
-for (var i = 0; i < redirects.length; i++) {
-  var tr = "<tr>";
-  tr += "<td>" + obj[i].key + "</td>" + "<td>" + obj[i].value.toString() + "</td></tr>";
-  tbody.innerHTML += tr;
+<style>
+#top {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding: 10px;
 }
+
+#table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: .8em;
+  border-collapse: collapse;
+}
+
+#table td, #table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+#table tr:nth-child(even){background-color: #f2f2f2;}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<div id="top">
+<h1>Wildcat Bluff Disc Golf Course - Sign Redirects</h1>
+<p><b>redirect.html</b> from this site is used to forward the static URLs in the QR codes on tee signs to the target pages.
+<br>Using redirects allows for updating these target pages in the future without having to change the QR codes.</p>
+<h3>Usage:</h3>
+Send a request for redirect.html and indicate the target name at the end of the URL using query parameter:<br>
+<b>?sendto=<i>target name</i></b><br><br>
+Please report any issues or changes at: <a href="mailto:wildcatbluffdgc@gmail.com">wildcatbluffdgc@gmail.com</a><br><br>
+</div>
+
+<div id="tableout"></div><br><br>
+
+<script type="text/javascript">
+var x, html, urlprefix;
+urlprefix = 'https://wildcatbluffdgc.github.io/redirect.html?sendto='
+html = '<table id="table">';
+html += '<tr><td><h3>URL to Redirect</h3></td><td><h3>Target URL</h3></td></tr>';
+for (x in redirects) {
+  html += '<tr>';
+  if (x == 'main') {
+    html += '<td><i>(default target)</i></td>';
+  } else { 
+    html += '<td><a href="' + urlprefix + x + '">' + urlprefix + x + '</a></td>';
+  }
+  if (redirects[x] == '') {
+    html += '<td><i>(target not defined yet)</i></td>';
+  } else { 
+    html += '<td><a href="' + redirects[x] + '">' + redirects[x] + '</a></td>';
+  }
+  html += '</tr>';
+}
+html += '</table>';
+document.getElementById('tableout').innerHTML = html;
 </script>
