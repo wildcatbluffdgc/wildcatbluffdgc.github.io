@@ -35,6 +35,6 @@ const redirects = {
   hole18red: "https://youtu.be/C1Xac2vKRD4",
   hole19: "https://youtu.be/jlFLqIyBxlM",
   hole20blue: "",
-  hole20red: "https://youtu.be/jIc3xAtrSR4",
-  hole21: "https://youtu.be/62iBfy52aT4"
+  hole20red: "https://youtu.be/HApNwRJRpQw",
+  hole21: "https://youtu.be/_PZArOVXhmY"
 };
