@@ -3,15 +3,15 @@
 
 const redirects = {
   main: "https://www.facebook.com/Wildcat-Bluff-Disc-Golf-Course-392191570823455/posts",
-  hole1blue: "",
-  hole1red: "",
+  hole1blue: "https://youtu.be/nhc1yL4MFKc",
+  hole1red: "https://youtu.be/RY-DA82uRdk",
   hole2blue: "https://youtu.be/Z8vdF8ngr6I",
   hole2red: "",
   hole3: "https://youtu.be/uBQ-JtPGvMg",
   hole4blue: "",
   hole4red: "",
   hole5blue: "https://youtu.be/RnTLr47sUk0",
-  hole5red: "",
+  hole5red: "https://youtu.be/aREvLDFEGt4",
   hole6blue: "https://youtu.be/sR3UgUnZPGo",
   hole6red: "",
   hole7: "https://youtu.be/YJJLbykr67o",
