@@ -6,7 +6,7 @@ const redirects = {
   hole1blue: "https://youtu.be/nhc1yL4MFKc",
   hole1red: "https://youtu.be/RY-DA82uRdk",
   hole2blue: "https://youtu.be/Z8vdF8ngr6I",
-  hole2red: "",
+  hole2red: "https://youtu.be/RMBLvclTASY",
   hole3: "https://youtu.be/uBQ-JtPGvMg",
   hole4blue: "https://youtu.be/z1clkMo-zUY",
   hole4red: "https://youtu.be/x8mtGALtd5A",
